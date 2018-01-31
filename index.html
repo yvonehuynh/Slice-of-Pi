@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Click Wars!</title>
+    <style>
+        .hide {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wapper">
+
+        <!-- winning panel -->
+        <div class="winning-panel-container hide">
+            <h2>You Win! Move onto the next round?</h2>
+            <p class="score"></p>
+        </div>
+
+        <!-- losing panel -->
+        <div class="losing-panel-container hide">
+            <h2>You Lose! Try again?</h2>
+            <p class="score"></p>
+        </div>
+
+        <!-- Level One -->
+        <div class="level-one-container">
+            <h3 class="click-button">Click me!</h3>
+            <p class="score"></p>
+        </div>
+    </div>
+
+    <script>
+    let score = 0;
+    // 1. on click of h3 CLick Me button
+        // add a point
+        // print point to the screen using p tage
+
+        document.getElementsByClassName('click-button')[0]
+            .addEventListener('click', function (event) {
+                addScore();
+            });
+
+        function addScore() {
+            score++;
+            const para = document.getElementsByClassName("score")[2];
+            para.textContent = score;
+            if (score === 5) {
+                const el = document.getElementsByClassName("winning-panel-container")[0];
+                el.style.display = "block";
+                const scoreBoard = document.getElementsByClassName("score")[0];
+                scoreBoard.textContent = score;
+            }
+        }
+    
+    </script>
+</body>
+</html>

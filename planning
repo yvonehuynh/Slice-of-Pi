@@ -1,0 +1,23 @@
+Click Wars!
+
+How to play:
+    Player clicks on the "button" for the required number of times for each level.
+    When player reaches the required level, they move onto next level. If they lose, they start at the very beginning.
+    Note: each level will be timed.
+
+Psuedo Code:
+ // 1. click on button
+ // 2. aim to get required points
+ // 3. move onto next level
+ // 4. or lose and start at very beginning
+
+ Potential Levels:
+ level 1: 5 clicks (15 seconds)
+ level 2: 20 clicks (15 seconds)
+ level 3: 30 clicks (15 seconds)
+ level 4: 60 clicks (20 seconds)
+
+ Panels:
+ game panel: where playes play
+ next level panel: where players move onto next level
+ game over panel: player restart game

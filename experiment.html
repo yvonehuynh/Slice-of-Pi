@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background: yellow;
+        }
+
+        p {
+            font-size: 5rem;
+        }
+
+        .hide {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+
+        <div class="box">
+        </div>
+
+        <p class="score" id="first">
+        </p>
+
+        <h1>Hello</h1>
+
+    </div>
+
+    <div id="hidden">
+        <p>hello im supposed to be a panel!</p>
+    </div>
+    <script>
+    // on click of the yellow div
+    // add a point
+
+    let score = 0;
+    const para = document.getElementsByClassName("score")[0];
+
+    document.getElementsByClassName('box')[0]
+            .addEventListener('click', function (event) {
+                addScore();
+            });
+
+    function addScore(){
+        score++;
+        const para = document.getElementsByClassName("score")[0];
+        para.textContent = score;
+        if (score === 5) {
+            para.textContent = "you win!";
+            // window.location = "www.google.ca/images";
+        }
+    }
+
+// hide and seek function
+    function hide(e){
+        // when this is clicked, hide the element
+        document.getElementById("first")
+        .addEventListener("click", function(e){
+            const hidden = document.getElementById("hidden");
+            hidden.classList = "hide";
+        })
+    }
+
+    hide();
+
+    </script>
+</body>
+</html>
