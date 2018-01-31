@@ -5,12 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Click Wars!</title>
-    <style>
-        .hide {
-            display: none;
-        }
 
-    </style>
+    <link rel="stylesheet" href="./public/styles/style.css">
 </head>
 <body>
     <div class="wapper">
@@ -19,6 +15,8 @@
         <div class="winning-panel-container hide">
             <h2>You Win! Move onto the next round?</h2>
             <p class="score"></p>
+            <a class="accept" id="accept-one">Yes</a>
+            <a class="reject" id="accept-two">No</a>
         </div>
 
         <!-- losing panel -->
@@ -28,35 +26,31 @@
         </div>
 
         <!-- Level One -->
-        <div class="level-one-container">
+        <div class="level-one-container" id="level-one">
             <h3 class="click-button">Click me!</h3>
-            <p class="score"></p>
+            <p class="score" id="score-level1"></p>
+        </div> 
+
+        <!-- Level Two -->
+        <div class="level-one-container hide" id="level-two">
+            <h3 class="click-button">Click me!</h3>
+            <p class="score" id="score-level2"></p>
         </div>
-    </div>
 
-    <script>
-    let score = 0;
-    // 1. on click of h3 CLick Me button
-        // add a point
-        // print point to the screen using p tage
+        <!-- Level Three -->
+        <div class="level-one-container hide" id="level-three">
+            <h3 class="click-button">Click me!</h3>
+            <p class="score" id="score-level3"></p>
+        </div>
 
-        document.getElementsByClassName('click-button')[0]
-            .addEventListener('click', function (event) {
-                addScore();
-            });
+        <!-- Level Three --> 
+        <div class="level-one-container hide" id="level-four">
+            <h3 class="click-button">Click me!</h3>
+            <p class="score" id="score-level4"></p>
+        </div>
+    </div> 
 
-        function addScore() {
-            score++;
-            const para = document.getElementsByClassName("score")[2];
-            para.textContent = score;
-            if (score === 5) {
-                const el = document.getElementsByClassName("winning-panel-container")[0];
-                el.style.display = "block";
-                const scoreBoard = document.getElementsByClassName("score")[0];
-                scoreBoard.textContent = score;
-            }
-        }
-    
-    </script>
+
+    <script src="./public/scripts/app.js"></script>
 </body>
 </html>
