@@ -1,4 +1,5 @@
 let score = 0;
+let time = 5;
 
 // 1. on click of h3 CLick Me button
     // add a point
@@ -8,6 +9,7 @@ const userClick = (buttonLevel, scoreLevel1, requireedScore, currentLevel, nextG
     .addEventListener('click', function (event) {
         addScore(scoreLevel1, requireedScore);
         nextLevel(currentLevel, nextGameLevel);
+        timer();
     });
 }
 
@@ -42,6 +44,18 @@ function nextLevel(currentLevel, nextGameLevel) {
         previousGame.style.display = "none";
         nextGame.classList.remove("hide");
     })
+}
+
+function timer(){
+    const countdown = window.setInterval(function(){
+        time --;
+        if (time <= 0){
+            clearInterval(countdown);
+            document.querySelector(".level-container").classList.add("hide");
+            document.getElementsByClassName("losing-panel-container")[0].classList.remove("hide");
+        }
+        console.log(time);
+    }, 1000);
 }
 
 // Level One
