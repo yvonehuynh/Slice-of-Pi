@@ -3,11 +3,11 @@ let score = 0;
 // 1. on click of h3 CLick Me button
     // add a point
     // print point to the screen using p tage
-const userClick=(index, param1, param2, index1, index2)=>{
-document.getElementsByClassName('click-button')[index]
+const userClick = (buttonLevel, scoreLevel1, requireedScore, currentLevel, nextGameLevel)=>{
+    document.getElementById(buttonLevel)
     .addEventListener('click', function (event) {
-        addScore(param1, param2);
-        nextLevel(index1, index2);
+        addScore(scoreLevel1, requireedScore);
+        nextLevel(currentLevel, nextGameLevel);
     });
 }
 
@@ -15,14 +15,14 @@ document.getElementsByClassName('click-button')[index]
     // once user reaches required score,
     // show winning panel
     // print score to page
-const addScore = (index1, index2) => {
+const addScore = (scoreLevel1, requireedScore) => {
     score++;
-    const para = document.getElementsByClassName("score")[index1];
+    const para = document.getElementById(scoreLevel1);
     para.textContent = score;
-    if (score === 5) {
+    if (score === requireedScore) {
         const el = document.getElementsByClassName("winning-panel-container")[0];
         el.style.display = "block";
-        const scoreBoard = document.getElementsByClassName("score")[index2];
+        const scoreBoard = document.getElementsByClassName("score")[0];
         scoreBoard.textContent = score;
         score = 0;
     }
@@ -33,29 +33,20 @@ const addScore = (index1, index2) => {
     // hide previous game play
     // show new level
 
-function nextLevel(index1, index2){
-    document.getElementById("accept-one").addEventListener("click", function(){
+function nextLevel(currentLevel, nextGameLevel) {
+    document.getElementById("accept-one").addEventListener("click", function () {
         const winningPanel = document.getElementsByClassName("winning-panel-container")[0];
-        const previousGame = document.getElementsByClassName("level-container")[index1];
-        const nextGame = document.getElementsByClassName("level-container")[index2];
+        const previousGame = document.getElementById(currentLevel);
+        const nextGame = document.getElementById(nextGameLevel);
         winningPanel.style.display = "none";
         previousGame.style.display = "none";
         nextGame.classList.remove("hide");
     })
 }
 
-
-// first level
-// 0 = index of h3 Click Button
-// 2 = index of p score
-// 0 = index of winning panel p score
-userClick(0, 2, 0, 0, 1);
-userClick(1, 3, 0, 1, 2);
-userClick(2, 4, 0, 2, 3);
-// 0 = index of current container
-// 1 = index of next container
-// nextLevel(0, 1);
-
-// userClick(1, 3, 0);
-// userClick(2, 4, 0);
-
+// Level One
+userClick("level-one-button", "score-level1", 5, "level-one", "level-two");
+// Level Two
+userClick("level-two-button", "score-level2", 15, "level-two", "level-three");
+// Level Three
+userClick("level-three-button", "score-level3", 20, "level-three", "level-four");
