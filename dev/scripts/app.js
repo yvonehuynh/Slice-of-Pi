@@ -9,9 +9,9 @@ timer();
 const userClick = (buttonLevel, scoreLevel1, requireedScore, currentLevel, nextGameLevel, neededClicks)=>{
     document.getElementById(buttonLevel)
         .addEventListener('click', function (event) {
-        addScore(scoreLevel1, requireedScore, currentLevel);
+        addScore(buttonLevel, scoreLevel1, requireedScore, currentLevel);
         nextLevel(currentLevel, nextGameLevel);
-            makedynamic(buttonLevel, requireedScore);
+        //makedynamic(buttonLevel, requireedScore);
     });
 }
 
@@ -20,10 +20,11 @@ const userClick = (buttonLevel, scoreLevel1, requireedScore, currentLevel, nextG
     // once user reaches required score,
     // show winning panel
     // print score to page
-const addScore = (scoreLevel1, requireedScore, hideElement) => {
+const addScore = (buttonLevel, scoreLevel1, requireedScore, hideElement) => {
     score++;
     const para = document.getElementById(scoreLevel1);
     para.textContent = score;
+    makedynamic(buttonLevel, requireedScore)
     if (score === requireedScore) {
         const el = document.getElementsByClassName("winning-panel-container")[0];
         el.style.display = "block";
@@ -71,7 +72,6 @@ function makedynamic(button, neededclicks) {
     let info = document.getElementById("info");
     let progress = document.getElementById("progress");
     let stepsize = 100 / neededclicks;
-    document.getElementById(button).onclick = function () {
         let width = progress.style.width.replace("%", "");
         width = parseInt(width) + stepsize;
         if (width >= 100) {
@@ -84,7 +84,7 @@ function makedynamic(button, neededclicks) {
             progress.style.width = width;
             info.innerHTML = "Progress: " + width;
         }
-    }
+    
 }
 
 function resetProgress(){
@@ -98,6 +98,6 @@ function resetProgress(){
 // Level One
 userClick("level-one-button", "score-level1", 5, "level-one", "level-two");
 // Level Two
-userClick("level-two-button", "score-level2", 25, "level-two", "level-three");
+userClick("level-two-button", "score-level2", 15, "level-two", "level-three");
 // Level Three
-userClick("level-three-button", "score-level3", 50, "level-three", "level-four");
+userClick("level-three-button", "score-level3", 20, "level-three", "level-four");
