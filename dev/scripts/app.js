@@ -54,9 +54,21 @@ function timer(){
             document.querySelector(".level-container").classList.add("hide");
             document.getElementsByClassName("losing-panel-container")[0].classList.remove("hide");
         }
-        console.log(time);
+        document.querySelector(".timer").textContent = time;
     }, 1000);
 }
+
+document.getElementById("increase").onclick = function () {
+    var progress = document.getElementById("progress");
+    var current_width = progress.style.width.replace("%", "");
+    var currentWidth = document.getElementById("currentWidth");
+    current_width = (current_width > 100) ? 100 : current_width;
+    currentWidth.innerHTML = "Progress: " + current_width++ + "%";
+    progress.style.width = parseInt(current_width) + "%";
+}
+  /*
+Believe it or not, I still don't know how this script is making the progress bar work. I just coded any shit out ;)
+*/
 
 // Level One
 userClick("level-one-button", "score-level1", 5, "level-one", "level-two");

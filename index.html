@@ -7,10 +7,42 @@
     <title>Click Wars!</title>
 
     <link rel="stylesheet" href="./public/styles/style.css">
+    <style>
+        #container {
+  height: auto;
+  width: 300px;
+  margin: 10px auto;
+  border: 1px solid rgb(208, 99, 99);
+  padding: 10px;
+  background-color:lighten(gray, 10%);
+#loader {
+ height: auto;
+  border:1px solid grey;
+  width: auto;
+}
+  p {
+margin: 1px;
+  }
+}
+#progress {
+        /* overflow:hidden; */
+   height: 9px;
+    width: 0;
+    background: red;
+    max-width: 100%;
+  }
+    </style>
 </head>
 <body>
     <div class="wapper">
-
+        <p class="timer"></p>
+<div id="container">
+    <div id="loader">
+        <div id="progress"></div>
+    </div>
+    <div id="currentWidth"></div>
+    <input id="increase" type="submit" value="Increase">
+</div>
         <!-- winning panel -->
         <div class="winning-panel-container hide">
             <h2>You Win! Move onto the next round?</h2>
