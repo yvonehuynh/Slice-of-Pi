@@ -7,10 +7,20 @@
     <title>Click Wars!</title>
 
     <link rel="stylesheet" href="./public/styles/style.css">
+    <style>
+        #progress {
+            height: 100px;
+            border: 1px solid black;
+            background: red;
+        }
+    </style>
 </head>
 <body>
     <div class="wapper">
         <p class="timer"></p>
+
+            <div id="info">Progress: 0%</div>
+            <div id="progress" style="width:0%;"></div>
 
         <!-- winning panel -->
         <div class="winning-panel-container hide">

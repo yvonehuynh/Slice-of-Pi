@@ -58,21 +58,29 @@ function timer(){
     }, 1000);
 }
 
-progressBar();
-function progressBar(e){
-    document.getElementById("level-one-button").addEventListener("click", function(){
-        const progress = document.getElementById("progress");
-        let currentWidth = progress.style.width = ("%", "");
-        const otherWidth = document.getElementById("currentWidth");
-        
-        const totalCount = 5;
-        currentWidth += totalCount;
-        console.log(currentWidth);
-    })
+// Progress Bar
+
+function makedynamic(button, neededclicks) {
+    let info = document.getElementById("info");
+    let progress = document.getElementById("progress");
+    let stepsize = 100 / neededclicks;
+    document.getElementById(button).onclick = function () {
+        let width = progress.style.width.replace("%", "");
+        width = parseInt(width) + stepsize;
+        if (width >= 100) {
+            progress.style.width = "100%";
+            info.innerHTML = stepsize > 10 ? "You made it!" : "ouch, my fingerrrrs";
+        } else {
+            width = width + "%";
+            progress.style.width = width;
+            info.innerHTML = "Progress: " + width;
+        }
+    }
 }
-  /*
-Believe it or not, I still don't know how this script is making the progress bar work. I just coded any shit out ;)
-*/
+
+makedynamic("level-one-button", 5);
+makedynamic("level-one-button", 15);
+makedynamic("level-one-button", 20);
 
 // Level One
 userClick("level-one-button", "score-level1", 5, "level-one", "level-two");
