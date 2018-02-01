@@ -1,18 +1,20 @@
 let score = 0;
 let time = 15
 
+timer();
+
 // 1. on click of h3 CLick Me button
     // add a point
     // print point to the screen using p tage
 const userClick = (buttonLevel, scoreLevel1, requireedScore, currentLevel, nextGameLevel, neededClicks)=>{
     document.getElementById(buttonLevel)
-    .addEventListener('click', function (event) {
+        .addEventListener('click', function (event) {
         addScore(scoreLevel1, requireedScore, currentLevel);
         nextLevel(currentLevel, nextGameLevel);
-        makedynamic(buttonLevel, neededClicks);
-        timer();
+            makedynamic(buttonLevel, requireedScore);
     });
 }
+
 
 // 2. increase score as user clicks
     // once user reaches required score,
@@ -41,7 +43,6 @@ function nextLevel(currentLevel, nextGameLevel) {
     document.getElementById("accept-one").addEventListener("click", function () {
         resetProgress();
         const winningPanel = document.getElementsByClassName("winning-panel-container")[0];
-        resetProgress();
         const previousGame = document.getElementById(currentLevel);
         const nextGame = document.getElementById(nextGameLevel);
         winningPanel.style.display = "none";
@@ -52,9 +53,9 @@ function nextLevel(currentLevel, nextGameLevel) {
 
 function timer(){
     const countdown = window.setInterval(function(){
-        time--;
+        time = time - 1;
         if (time <= 0){
-            clearInterval(countdown);
+            clearTimeout(countdown);
             window.setTimeout(function(){
                 document.querySelector(".level-container").classList.add("hide");
                 document.getElementsByClassName("losing-panel-container")[0].classList.remove("hide");
@@ -95,8 +96,8 @@ function resetProgress(){
 
 
 // Level One
-userClick("level-one-button", "score-level1", 5, "level-one", "level-two", 5);
+userClick("level-one-button", "score-level1", 5, "level-one", "level-two");
 // Level Two
-userClick("level-two-button", "score-level2", 15, "level-two", "level-three", 15);
+userClick("level-two-button", "score-level2", 25, "level-two", "level-three");
 // Level Three
-userClick("level-three-button", "score-level3", 20, "level-three", "level-four", 20);
+userClick("level-three-button", "score-level3", 50, "level-three", "level-four");
