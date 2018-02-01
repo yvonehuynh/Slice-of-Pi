@@ -74,5 +74,33 @@
     hide();
 
     </script>
+<!-- progress bar on click -->
+    <div id="info">Progress: 0%</div>
+    <div id="progress" style="width:0%;height:100px;border:1px solid black;"></div>
+    <button id="increase100">1 click needed</button>
+    <button id="increase20">5 clicks needed</button>
+    <button id="increase4">25 clicks needed</button>
+    <script type="text/javascript">
+        function makedynamic(button, neededclicks) {
+            let info = document.getElementById("info");
+            let progress = document.getElementById("progress");
+            let stepsize = 100 / neededclicks;
+            document.getElementById(button).onclick = function () {
+                let width = progress.style.width.replace("%", "");
+                width = parseInt(width) + stepsize;
+                if (width >= 100) {
+                    progress.style.width = "100%";
+                    info.innerHTML = stepsize > 10 ? "You made it!" : "ouch, my fingerrrrs";
+                } else {
+                    width = width + "%";
+                    progress.style.width = width;
+                    info.innerHTML = "Progress: " + width;
+                }
+            }
+        }
+        makedynamic('increase100', 1);
+        makedynamic('increase20', 5);
+        makedynamic('increase4', 25);
+    </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 let score = 0;
-let time = 5;
+let time = 45;
 
 // 1. on click of h3 CLick Me button
     // add a point
@@ -58,13 +58,17 @@ function timer(){
     }, 1000);
 }
 
-document.getElementById("increase").onclick = function () {
-    var progress = document.getElementById("progress");
-    var current_width = progress.style.width.replace("%", "");
-    var currentWidth = document.getElementById("currentWidth");
-    current_width = (current_width > 100) ? 100 : current_width;
-    currentWidth.innerHTML = "Progress: " + current_width++ + "%";
-    progress.style.width = parseInt(current_width) + "%";
+progressBar();
+function progressBar(e){
+    document.getElementById("level-one-button").addEventListener("click", function(){
+        const progress = document.getElementById("progress");
+        let currentWidth = progress.style.width = ("%", "");
+        const otherWidth = document.getElementById("currentWidth");
+        
+        const totalCount = 5;
+        currentWidth += totalCount;
+        console.log(currentWidth);
+    })
 }
   /*
 Believe it or not, I still don't know how this script is making the progress bar work. I just coded any shit out ;)
