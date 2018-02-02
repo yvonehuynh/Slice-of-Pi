@@ -88,6 +88,7 @@
             document.getElementById(button).onclick = function () {
                 let width = progress.style.width.replace("%", "");
                 width = parseInt(width) + stepsize;
+                console.log(width)
                 if (width >= 100) {
                     progress.style.width = "100%";
                     info.innerHTML = stepsize > 10 ? "You made it!" : "ouch, my fingerrrrs";

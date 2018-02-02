@@ -4,23 +4,23 @@ let time = 15
 timer();
 
 // 1. on click of h3 CLick Me button
-    // add a point
-    // print point to the screen using p tage
-const userClick = (buttonLevel, scoreLevel1, requireedScore, currentLevel, nextGameLevel, neededClicks)=>{
+// add a point
+// print point to the screen using p tage
+const userClick = (buttonLevel, scoreLevel1, requireedScore, currentLevel, nextGameLevel, neededClicks) => {
     document.getElementById(buttonLevel)
         .addEventListener('click', function (event) {
-        addScore(buttonLevel, scoreLevel1, requireedScore, currentLevel);
-        nextLevel(currentLevel, nextGameLevel);
-        //makedynamic(buttonLevel, requireedScore);
-    });
+            addScore(buttonLevel, scoreLevel1, requireedScore, currentLevel, currentLevel, nextGameLevel);
+            //nextLevel(currentLevel, nextGameLevel);
+            //makedynamic(buttonLevel, requireedScore);
+        });
 }
 
 
 // 2. increase score as user clicks
-    // once user reaches required score,
-    // show winning panel
-    // print score to page
-const addScore = (buttonLevel, scoreLevel1, requireedScore, hideElement) => {
+// once user reaches required score,
+// show winning panel
+// print score to page
+const addScore = (buttonLevel, scoreLevel1, requireedScore, hideElement, currentLevel, nextGameLevel) => {
     score++;
     const para = document.getElementById(scoreLevel1);
     para.textContent = score;
@@ -32,17 +32,19 @@ const addScore = (buttonLevel, scoreLevel1, requireedScore, hideElement) => {
         scoreBoard.textContent = score;
         score === 0;
         document.getElementById(hideElement).classList = "hide";
+        nextLevel(currentLevel, nextGameLevel);
     }
 }
 
 // 3. on click of accept
-    // hide winning panel
-    // hide previous game play
-    // show new level
+// hide winning panel
+// hide previous game play
+// show new level
 
 function nextLevel(currentLevel, nextGameLevel) {
     document.getElementById("accept-one").addEventListener("click", function () {
         resetProgress();
+        score = 0;
         const winningPanel = document.getElementsByClassName("winning-panel-container")[0];
         const previousGame = document.getElementById(currentLevel);
         const nextGame = document.getElementById(nextGameLevel);
@@ -52,12 +54,12 @@ function nextLevel(currentLevel, nextGameLevel) {
     })
 }
 
-function timer(){
-    const countdown = window.setInterval(function(){
+function timer() {
+    const countdown = window.setInterval(function () {
         time = time - 1;
-        if (time <= 0){
+        if (time <= 0) {
             clearTimeout(countdown);
-            window.setTimeout(function(){
+            window.setTimeout(function () {
                 document.querySelector(".level-container").classList.add("hide");
                 document.getElementsByClassName("losing-panel-container")[0].classList.remove("hide");
             })
@@ -68,26 +70,26 @@ function timer(){
 
 // Progress Bar
 
-function makedynamic(button, neededclicks) {
+function makedynamic(button, requireedScore) {
     let info = document.getElementById("info");
     let progress = document.getElementById("progress");
-    let stepsize = 100 / neededclicks;
-        let width = progress.style.width.replace("%", "");
-        width = parseInt(width) + stepsize;
-        if (width >= 100) {
-            progress.style.width = "100%";
-            info.innerHTML = stepsize > 10 ? "You made it!" : "ouch, my fingerrrrs";
-            const el = document.getElementsByClassName("winning-panel-container")[0];
-            el.style.display = "block";
-        } else {
-            width = width + "%";
-            progress.style.width = width;
-            info.innerHTML = "Progress: " + width;
-        }
-    
+    let stepsize = 100 / requireedScore;
+    let width = progress.style.width.replace("%", "");
+    width = parseInt(width) + stepsize;
+    if (width >= 100) {
+        progress.style.width = "100%";
+        info.innerHTML = stepsize > 10 ? "You made it!" : "ouch, my fingerrrrs";
+        const el = document.getElementsByClassName("winning-panel-container")[0];
+        el.style.display = "block";
+    } else {
+        width = width + "%";
+        progress.style.width = width;
+        info.innerHTML = "Progress: " + width;
+    }
+
 }
 
-function resetProgress(){
+function resetProgress() {
     let progress = document.getElementById("progress");
     let info = document.getElementById("info");
     progress.style.width = "0";
@@ -98,6 +100,6 @@ function resetProgress(){
 // Level One
 userClick("level-one-button", "score-level1", 5, "level-one", "level-two");
 // Level Two
-userClick("level-two-button", "score-level2", 15, "level-two", "level-three");
+userClick("level-two-button", "score-level2", 50, "level-two", "level-three");
 // Level Three
-userClick("level-three-button", "score-level3", 20, "level-three", "level-four");
+// userClick("level-three-button", "score-level3", 50, "level-three", "level-four");
