@@ -1,7 +1,20 @@
+
+function initGame(){
+document.getElementById("start-game-button").addEventListener("click", function(){
+    // on click of start game button, run the following functions
+    document.getElementById("level-one").style.display= "block";
+    console.log("hello")
+    timer();
+    userClick("level-one-button", "score-level1", 5, "level-one", "level-two");
+    // Level Two
+    userClick("level-two-button", "score-level2", 50, "level-two", "level-three");
+})
+}
+initGame();
+
 let score = 0;
 let time = 15
 
-timer();
 
 // 1. on click of h3 CLick Me button
 // add a point
@@ -98,8 +111,8 @@ function resetProgress() {
 
 
 // Level One
-userClick("level-one-button", "score-level1", 5, "level-one", "level-two");
-// Level Two
-userClick("level-two-button", "score-level2", 50, "level-two", "level-three");
+// userClick("level-one-button", "score-level1", 5, "level-one", "level-two");
+// // Level Two
+// userClick("level-two-button", "score-level2", 50, "level-two", "level-three");
 // Level Three
 // userClick("level-three-button", "score-level3", 50, "level-three", "level-four");
