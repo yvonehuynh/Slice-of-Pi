@@ -1,0 +1,16 @@
+.progress {
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid black;
+        #progress {
+        height: 60px;
+        background: repeating-linear-gradient(
+        45deg,
+        $secondaryColour,
+        $secondaryColour 40px,
+        $primaryColour 40px,
+        $primaryColour 80px
+        );
+        border-radius: 10px;
+    }
+}

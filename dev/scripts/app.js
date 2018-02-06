@@ -1,14 +1,15 @@
 
 function initGame(){
-document.getElementById("start-game-button").addEventListener("click", function(){
-    // on click of start game button, run the following functions
-    document.getElementById("level-one").style.display= "block";
-    console.log("hello")
-    timer();
-    userClick("level-one-button", "score-level1", 5, "level-one", "level-two");
-    // Level Two
-    userClick("level-two-button", "score-level2", 50, "level-two", "level-three");
-})
+    document.getElementById("start-game-button").addEventListener("click", function(){
+        // on click of start game button, run the following functions
+        document.getElementById("game-start-panel").style.display= "none";
+        document.getElementById("level-one").style.display= "block";
+        console.log("hello")
+        timer();
+        userClick("level-one-button", "score-level1", 5, "level-one", "level-two");
+        // Level Two
+        userClick("level-two-button", "score-level2", 50, "level-two", "level-three");
+    })
 }
 initGame();
 
@@ -37,14 +38,14 @@ const addScore = (buttonLevel, scoreLevel1, requireedScore, hideElement, current
     score++;
     const para = document.getElementById(scoreLevel1);
     para.textContent = score;
-    makedynamic(buttonLevel, requireedScore)
+    makedynamic(buttonLevel, requireedScore);
     if (score === requireedScore) {
         const el = document.getElementsByClassName("winning-panel-container")[0];
         el.style.display = "block";
         const scoreBoard = document.getElementsByClassName("score")[0];
         scoreBoard.textContent = score;
         score === 0;
-        document.getElementById(hideElement).classList = "hide";
+        document.getElementById(currentLevel).style.display = "none";
         nextLevel(currentLevel, nextGameLevel);
     }
 }
@@ -73,7 +74,7 @@ function timer() {
         if (time <= 0) {
             clearTimeout(countdown);
             window.setTimeout(function () {
-                document.querySelector(".level-container").classList.add("hide");
+                document.querySelector(".level-container").style.display = "none";
                 document.getElementsByClassName("losing-panel-container")[0].classList.remove("hide");
             })
         }
@@ -99,7 +100,6 @@ function makedynamic(button, requireedScore) {
         progress.style.width = width;
         info.innerHTML = "Progress: " + width;
     }
-
 }
 
 function resetProgress() {
@@ -108,11 +108,3 @@ function resetProgress() {
     progress.style.width = "0";
     info.innerHTML = `"Progress: 0%`;
 }
-
-
-// Level One
-// userClick("level-one-button", "score-level1", 5, "level-one", "level-two");
-// // Level Two
-// userClick("level-two-button", "score-level2", 50, "level-two", "level-three");
-// Level Three
-// userClick("level-three-button", "score-level3", 50, "level-three", "level-four");

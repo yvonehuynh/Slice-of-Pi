@@ -5,35 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Click Wars!</title>
-
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="./public/styles/style.css">
-    <style>
-        #progress {
-            height: 100px;
-            border: 1px solid black;
-            background: red;
-        }
-    </style>
 </head>
 <body>
     <div class="wapper">
+        <h1>SLICE OF PI</h1>
 
         <!-- Game Start Panel -->
         <div id="game-start-panel">
-            <h1>SLICE OF PI</h1>
+            <div class="instructions">
+                <p>Get as many pies as you can!</p>
+            </div>
             <button id="start-game-button">START GAME</button>
         </div>
-        <p class="timer"></p>
+        <p><i class="fas fa-clock"></i><span class="timer"></span></p>
 
+        <div class="progress">
             <div id="info">Progress: 0%</div>
             <div id="progress" style="width:0%;"></div>
+        </div>
 
         <!-- winning panel -->
         <div class="winning-panel-container hide">
             <h2>You Win! Move onto the next round?</h2>
             <p class="score"></p>
-            <a class="accept" id="accept-one">Yes</a>
-            <a class="reject" id="accept-two">No</a>
+            <button class="accept" id="accept-one">Yes</button>
+            <button class="reject" id="accept-two">No</button>
         </div>
 
         <!-- losing panel -->
@@ -44,26 +42,30 @@
 
         <!-- Level One -->
         <div class="level-container" id="level-one">
-            <h3 class="click-button" id="level-one-button">Click me! Level one</h3>
-            <p class="score" id="score-level1"></p>
+            <h2>level one</h2>
+            <button class="click-button" id="level-one-button">Click me!</button>
+            <p class="score">Score: <span id="score-level1">0</span></p>
         </div> 
 
         <!-- Level Two -->
         <div class="level-container hide" id="level-two">
-            <h3 class="click-button" id="level-two-button">Click me! Level two</h3>
-            <p class="score" id="score-level2"></p>
+            <h2>Level Two</h2>
+            <button class="click-button" id="level-two-button">Click me!</button>
+            <p class="score">Score:<span id="score-level2">0</span></p>
         </div>
 
         <!-- Level Three -->
         <div class="level-container hide" id="level-three">
-            <h3 class="click-button" id="level-three-button">Click me! Level three</h3>
-            <p class="score" id="score-level3"></p>
+            <h2>Level 3</h2>
+            <button class="click-button" id="level-three-button">Click me!</button>
+            <p class="score">Score:<span id="score-level3">0</span></p>
         </div>
 
         <!-- Level Four --> 
         <div class="level-container hide" id="level-four">
-            <h3 class="click-button" id="level-four-button">Click me! Level four</h3>
-            <p class="score" id="score-level4"></p>
+            <h2>Level 4</h2>
+            <button class="click-button" id="level-four-button">Click me!</button>
+            <p class="score">Score:<span id="score-level4">0</span></p>
         </div>
     </div> 
 

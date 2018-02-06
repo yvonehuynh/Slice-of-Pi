@@ -1,0 +1,14 @@
+.level-container {
+    border: 3px solid black;
+    width: 40%;
+    padding: 10px;
+    height: 200px;
+    margin: 0 auto;
+    background: $secondaryColour;
+}
+
+span {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.5);
+    width: 40px;
+}
