@@ -9,12 +9,13 @@ function initGame(){
         userClick("level-one-button", "score-level1", 5, "level-one", "level-two");
         // Level Two
         userClick("level-two-button", "score-level2", 50, "level-two", "level-three");
+        showVisitPanel();
     })
 }
 initGame();
 
 let score = 0;
-let time = 15
+let time = 5;
 
 
 // 1. on click of h3 CLick Me button
@@ -107,4 +108,13 @@ function resetProgress() {
     let info = document.getElementById("info");
     progress.style.width = "0";
     info.innerHTML = `"Progress: 0%`;
+}
+
+// if user clicks on "no", show the visit panel 
+function showVisitPanel(){
+    document.getElementById("load-visit-panel").addEventListener("click", function(){
+        document.getElementsByClassName("visit-panel")[0].style.display = "block";
+        document.getElementsByClassName("level-container")[0].style.display = "none";
+        document.getElementsByClassName("losing-panel-container")[0].style.display = "none";
+    })
 }
