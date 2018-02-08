@@ -182,6 +182,18 @@ span {
   height: 200px;
   margin: 0 auto; }
 
+.visit-panel {
+  width: 60%;
+  border: 3px solid black;
+  background: #579bf5;
+  margin: 0 auto;
+  padding: 10px; }
+  .visit-panel .say-no-panel {
+    width: 70%;
+    margin: 0 auto; }
+    .visit-panel .say-no-panel:hover {
+      border: 3px solid black; }
+
 html {
   font-size: 62.5%; }
 
@@ -201,6 +213,9 @@ p {
 .wrapper {
   width: 100%;
   margin: 0 auto; }
+
+img {
+  max-width: 100%; }
 
 .hide {
   display: none; }
