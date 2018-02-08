@@ -1,13 +1,14 @@
 .progress {
     width: 50%;
     margin: 0 auto;
+    border-radius: 10px;
     border: 1px solid black;
         #progress {
         height: 60px;
         background: repeating-linear-gradient(
         45deg,
-        $secondaryColour,
-        $secondaryColour 40px,
+        $tertiaryColour,
+        $tertiaryColour 40px,
         $primaryColour 40px,
         $primaryColour 80px
         );

@@ -4,6 +4,7 @@
 @import "./partials/buttons";
 @import "./partials/levels";
 @import "./partials/progress-bar";
+@import "./partials/losing-panel";
 
 html {
     font-size: 62.5%;
@@ -18,6 +19,10 @@ body {
 
 h1 {
     font-size: 4rem;
+}
+
+h3 {
+    font-size: 2.5rem;
 }
 
 p {

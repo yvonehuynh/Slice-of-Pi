@@ -3,8 +3,8 @@ function initGame(){
     document.getElementById("start-game-button").addEventListener("click", function(){
         // on click of start game button, run the following functions
         document.getElementById("game-start-panel").style.display= "none";
+        document.querySelector(".level-container").style.display = "block";
         document.getElementById("level-one").style.display= "block";
-        console.log("hello")
         timer();
         userClick("level-one-button", "score-level1", 5, "level-one", "level-two");
         // Level Two
@@ -34,7 +34,7 @@ const userClick = (buttonLevel, scoreLevel1, requireedScore, currentLevel, nextG
 // once user reaches required score,
 // show winning panel
 // print score to page
-const addScore = (buttonLevel, scoreLevel1, requireedScore, hideElement, currentLevel, nextGameLevel) => {
+const addScore = (buttonLevel, scoreLevel1, requireedScore, hideElement, currentLevel, nextGameLevel,) => {
     score++;
     const para = document.getElementById(scoreLevel1);
     para.textContent = score;

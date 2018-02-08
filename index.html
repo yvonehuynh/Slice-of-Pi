@@ -5,34 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Click Wars!</title>
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
     <link rel="stylesheet" href="./public/styles/style.css">
 </head>
 <body>
     <div class="wapper">
-        <h1>SLICE OF PI</h1>
 
+        <h1>SLICE OF PI</h1>
         <!-- Game Start Panel -->
         <div id="game-start-panel">
-            <div class="instructions">
-                <p>Get as many pies as you can!</p>
+            <div class="game-description">
+                <h3>The Game</h3>
+                <p>The world really likes pies and according to unscientific research, it brings world peace. Can you bring world peace by baking as may pies as you can?</p>
+                <h3>Instructions</h3>
+                <p>Try to reach each level's goal by clicking on the button as much as you can! You got 15 seconds in total for all levels so hurry to make the world happy!</p>
             </div>
             <button id="start-game-button">START GAME</button>
         </div>
-        <p><i class="fas fa-clock"></i><span class="timer"></span></p>
-
-        <div class="progress">
-            <div id="info">Progress: 0%</div>
-            <div id="progress" style="width:0%;"></div>
-        </div>
-
-        <!-- winning panel -->
-        <div class="winning-panel-container hide">
-            <h2>You Win! Move onto the next round?</h2>
-            <p class="score"></p>
-            <button class="accept" id="accept-one">Yes</button>
-            <button class="reject" id="accept-two">No</button>
-        </div>
+        <p class="timer"></p>
 
         <!-- losing panel -->
         <div class="losing-panel-container hide">
@@ -40,35 +30,56 @@
             <p class="score"></p>
         </div>
 
+        <!-- Progress Bar -->
+        <!-- <div class="progress">
+            <div id="info">Progress: 0%</div>
+            <div id="progress" style="width:0%;"></div>
+        </div> -->
+
+        <div class="level-container hide">
+            <div id="info">Progress: 0%</div>
+            <div class="progress">
+                <div id="progress" style="width:0%;"></div>
+            </div>
+        
         <!-- Level One -->
-        <div class="level-container" id="level-one">
+        <div class="" id="level-one">
             <h2>level one</h2>
             <button class="click-button" id="level-one-button">Click me!</button>
             <p class="score">Score: <span id="score-level1">0</span></p>
         </div> 
 
         <!-- Level Two -->
-        <div class="level-container hide" id="level-two">
+        <div class=" hide" id="level-two">
             <h2>Level Two</h2>
             <button class="click-button" id="level-two-button">Click me!</button>
             <p class="score">Score:<span id="score-level2">0</span></p>
         </div>
 
         <!-- Level Three -->
-        <div class="level-container hide" id="level-three">
+        <div class=" hide" id="level-three">
             <h2>Level 3</h2>
             <button class="click-button" id="level-three-button">Click me!</button>
             <p class="score">Score:<span id="score-level3">0</span></p>
         </div>
 
         <!-- Level Four --> 
-        <div class="level-container hide" id="level-four">
+        <div class=" hide" id="level-four">
             <h2>Level 4</h2>
             <button class="click-button" id="level-four-button">Click me!</button>
             <p class="score">Score:<span id="score-level4">0</span></p>
         </div>
+        
+        <!-- winning panel -->
+        <div class="winning-panel-container hide">
+            <h2>You Win! Move onto the next round?</h2>
+            <p class="score"></p>
+            <button class="accept" id="accept-one">Yes</button>
+            <button class="reject" id="accept-two">No</button>
+        </div>
+    </div>
     </div> 
-
+    
 
     <script src="./public/scripts/app.js"></script>
 </body>

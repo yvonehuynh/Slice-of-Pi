@@ -1,9 +1,14 @@
 
 #game-start-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     border: 3px solid black;
     padding: 10px;
-    width: 70%;
+    width: 60%;
+    height: 400px;
     margin: 0 auto;
     background: repeating-linear-gradient(
         to right,
@@ -12,4 +17,8 @@
         $primaryColour 40px,
         $primaryColour 80px
         );
+    .game-description {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 10px;
+    }
 }
