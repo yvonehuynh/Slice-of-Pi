@@ -7,22 +7,25 @@ function initGame(){
         document.getElementById("level-one").style.display= "block";
         timer();
         // Level One
-        userClick("level-one-button", "score-level1", 5, "level-one", "level-two");
+        userClick("level-one-button", "score-level1", 1, "level-one", "level-two");
         // Level Two
-        userClick("level-two-button", "score-level2", 20, "level-two", "level-three");
+        userClick("level-two-button", "score-level2", 1, "level-two", "level-three");
         // Level Three
-        userClick("level-three-button", "score-level3", 50, "level-three", "level-four");
+        userClick("level-three-button", "score-level3", 1, "level-three", "level-four");
         // Level Four
-        userClick("level-four-button", "score-level4", 70, "level-four", "level-five");
+        userClick("level-four-button", "score-level4", 1, "level-four", "level-five");
         // Level Five
-        userClick("level-five-button", "score-level5", 80, "level-five", "level-six");
+        userClick("level-five-button", "score-level5", 1, "level-five", "level-six");
         // Level Six
-        userClick("level-six-button", "score-level6", 100, "level-six", null);
+       // endGame("level-six-button", "score-level6", 10, "level-six");
+
+        userClick("level-six-button", "score-level6", 7, "level-six");
 
         showVisitPanel("load-visit-panel");
         showVisitPanel("reject");
         refreshPage("reload-game");
         refreshPage("reload-game2");
+        refreshPage("play-again");
     })
 }
 initGame();
@@ -34,12 +37,13 @@ let time = 35;
 // 1. on click of h3 CLick Me button
 // add a point
 // print point to the screen using p tage
-const userClick = (buttonLevel, scoreLevel1, requireedScore, currentLevel, nextGameLevel, neededClicks) => {
+const userClick = (buttonLevel, scoreLevel1, requireedScore, currentLevel, nextGameLevel) => {
     document.getElementById(buttonLevel)
         .addEventListener('click', function (event) {
             addScore(buttonLevel, scoreLevel1, requireedScore, currentLevel, currentLevel, nextGameLevel);
             //nextLevel(currentLevel, nextGameLevel);
             //makedynamic(buttonLevel, requireedScore);
+           // endGame(buttonLevel, scoreLevel1, requireedScore, currentLevel);
         });
 }
 
@@ -53,14 +57,26 @@ const addScore = (buttonLevel, scoreLevel1, requireedScore, hideElement, current
     const para = document.getElementById(scoreLevel1);
     para.textContent = score;
     makedynamic(buttonLevel, requireedScore);
-    if (score === requireedScore) {
-        const el = document.getElementsByClassName("winning-panel-container")[0];
-        el.style.display = "block";
-        const scoreBoard = document.getElementsByClassName("score")[0];
-        scoreBoard.textContent = score;
-        score === 0;
-        document.getElementById(currentLevel).style.display = "none";
-        nextLevel(currentLevel, nextGameLevel);
+        if (score > 6){
+            const myel = document.getElementsByClassName("win-game-panel")[0];
+            myel.style.display = "block";
+            const scoreBoard1 = document.getElementsByClassName("score")[0];
+            scoreBoard1.textContent = score;
+            score === 0;
+            document.getElementById(currentLevel).style.display = "none";
+            document.getElementsByClassName("level-container")[0].style.display = "none";
+            time = NaN;
+            document.querySelector(".timer").style.display = "none";
+        }
+        if (score === requireedScore) {
+            const el = document.getElementsByClassName("winning-panel-container")[0];
+            el.style.display = "block";
+            const scoreBoard = document.getElementsByClassName("score")[0];
+            scoreBoard.textContent = score;
+            score === 0;
+            document.getElementById(currentLevel).style.display = "none";
+            nextLevel(currentLevel, nextGameLevel);
+        
     }
 }
 
@@ -139,3 +155,19 @@ function refreshPage(reloadButton){
         window.location.reload(true); 
     })
 };
+
+// end game function
+function endGame(buttonLevel, scoreLevel1, requireedScore, currentLevel){
+    score++;
+    const para = document.getElementById(scoreLevel1);
+    para.textContent = score;
+    makedynamic(buttonLevel, requireedScore);
+    if (score === requireedScore) {
+        const scoreBoard = document.getElementsByClassName("score")[0];
+        scoreBoard.textContent = score;
+        score === 0;
+        document.getElementById(currentLevel).style.display = "none";
+        const winningPanel = document.getElementsByClassName("winning-panel-container")[0];
+        winningPanel.style.display = "none";
+    }
+}
