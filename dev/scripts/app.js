@@ -6,16 +6,23 @@ function initGame(){
         document.querySelector(".level-container").style.display = "block";
         document.getElementById("level-one").style.display= "block";
         timer();
+        // Level One
         userClick("level-one-button", "score-level1", 5, "level-one", "level-two");
         // Level Two
-        userClick("level-two-button", "score-level2", 50, "level-two", "level-three");
-        showVisitPanel();
+        userClick("level-two-button", "score-level2", 20, "level-two", "level-three");
+        // Level Three
+        userClick("level-three-button", "score-level3", 50, "level-three", "level-four");
+
+        showVisitPanel("load-visit-panel");
+        showVisitPanel("reject");
+        refreshPage("reload-game");
+        refreshPage("reload-game2");
     })
 }
 initGame();
 
 let score = 0;
-let time = 5;
+let time = 35;
 
 
 // 1. on click of h3 CLick Me button
@@ -111,10 +118,18 @@ function resetProgress() {
 }
 
 // if user clicks on "no", show the visit panel 
-function showVisitPanel(){
-    document.getElementById("load-visit-panel").addEventListener("click", function(){
+function showVisitPanel(elementID) {
+    document.getElementById(elementID).addEventListener("click", function () {
         document.getElementsByClassName("visit-panel")[0].style.display = "block";
         document.getElementsByClassName("level-container")[0].style.display = "none";
         document.getElementsByClassName("losing-panel-container")[0].style.display = "none";
+        document.getElementsByClassName("timer")[0].style.display = "none";
     })
 }
+
+// refresh the page
+function refreshPage(reloadButton){
+    document.getElementById(reloadButton).addEventListener("click", function(){
+        window.location.reload(true); 
+    })
+};
