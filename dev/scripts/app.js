@@ -12,6 +12,12 @@ function initGame(){
         userClick("level-two-button", "score-level2", 20, "level-two", "level-three");
         // Level Three
         userClick("level-three-button", "score-level3", 50, "level-three", "level-four");
+        // Level Four
+        userClick("level-four-button", "score-level4", 70, "level-four", "level-five");
+        // Level Five
+        userClick("level-five-button", "score-level5", 80, "level-five", "level-six");
+        // Level Six
+        userClick("level-six-button", "score-level6", 100, "level-six", null);
 
         showVisitPanel("load-visit-panel");
         showVisitPanel("reject");

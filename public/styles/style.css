@@ -155,7 +155,7 @@ button {
   border: 3px solid black;
   width: 40%;
   padding: 10px;
-  height: 200px;
+  height: 300px;
   margin: 0 auto;
   background: #579bf5; }
 
@@ -193,6 +193,22 @@ span {
     margin: 0 auto; }
     .visit-panel .say-no-panel:hover {
       border: 3px solid black; }
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; }
+  header .pie-image {
+    width: 10%; }
+
+.level-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; }
+  .level-description .level-image {
+    width: 10%; }
 
 html {
   font-size: 62.5%; }
