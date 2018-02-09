@@ -2,9 +2,12 @@
 const initGame=()=>{
     document.getElementById("start-game-button").addEventListener("click", ()=>{
         // on click of start game button, run the following functions
-        document.getElementById("game-start-panel").style.display= "none";
-        document.querySelector(".level-container").style.display = "block";
-        document.getElementById("level-one").style.display= "block";
+        const startGame = document.getElementById("game-start-panel");
+        startGame.style.display= "none";
+        const levels = document.querySelector(".level-container");
+        levels.style.display = "block";
+        const firstLevel = document.getElementById("level-one");
+        firstLevel.style.display= "block";
         timer();
         // Level One
         userClick("level-one-button", "score-level1", 5, "level-one", "level-two");
