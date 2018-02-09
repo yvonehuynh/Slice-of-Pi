@@ -1,6 +1,6 @@
 
-function initGame(){
-    document.getElementById("start-game-button").addEventListener("click", function(){
+const initGame=()=>{
+    document.getElementById("start-game-button").addEventListener("click", ()=>{
         // on click of start game button, run the following functions
         document.getElementById("game-start-panel").style.display= "none";
         document.querySelector(".level-container").style.display = "block";
@@ -29,7 +29,7 @@ function initGame(){
 initGame();
 
 let score = 0;
-let time = 35111111;
+let time = 35;
 
 
 // 1. on click of h3 CLick Me button
@@ -37,7 +37,7 @@ let time = 35111111;
 // print point to the screen using p tage
 const userClick = (buttonLevel, scoreLevel1, requireedScore, currentLevel, nextGameLevel) => {
     document.getElementById(buttonLevel)
-        .addEventListener('click', function (event) {
+        .addEventListener('click', (event)=>{
             addScore(buttonLevel, scoreLevel1, requireedScore, currentLevel, currentLevel, nextGameLevel);
             //nextLevel(currentLevel, nextGameLevel);
             //makedynamic(buttonLevel, requireedScore);
@@ -50,7 +50,7 @@ const userClick = (buttonLevel, scoreLevel1, requireedScore, currentLevel, nextG
 // once user reaches required score,
 // show winning panel
 // print score to page
-const addScore = (buttonLevel, scoreLevel1, requireedScore, hideElement, currentLevel, nextGameLevel,) => {
+const addScore = (buttonLevel, scoreLevel1, requireedScore, hideElement, currentLevel, nextGameLevel) => {
     score++;
     const para = document.getElementById(scoreLevel1);
     para.textContent = score;
@@ -74,7 +74,6 @@ const addScore = (buttonLevel, scoreLevel1, requireedScore, hideElement, current
             score === 0;
             document.getElementById(currentLevel).style.display = "none";
             nextLevel(currentLevel, nextGameLevel);
-        
     }
 }
 
@@ -83,8 +82,8 @@ const addScore = (buttonLevel, scoreLevel1, requireedScore, hideElement, current
 // hide previous game play
 // show new level
 
-function nextLevel(currentLevel, nextGameLevel) {
-    document.getElementById("accept-one").addEventListener("click", function () {
+const nextLevel=(currentLevel, nextGameLevel)=>{
+    document.getElementById("accept-one").addEventListener("click", ()=>{
         resetProgress();
         score = 0;
         const winningPanel = document.getElementsByClassName("next-level-panel")[0];
@@ -96,15 +95,15 @@ function nextLevel(currentLevel, nextGameLevel) {
     })
 }
 
-function timer() {
+const timer=()=>{
     const countdown = window.setInterval(function () {
         time = time - 1;
         if (time <= 0) {
             clearTimeout(countdown);
-            window.setTimeout(function () {
+            window.setTimeout=()=>{
                 document.querySelector(".level-container").style.display = "none";
                 document.getElementsByClassName("losing-panel-container")[0].classList.remove("hide");
-            })
+            }
         }
         document.querySelector(".timer").textContent = `Timer: ${time}`;
     }, 1000);
@@ -112,7 +111,7 @@ function timer() {
 
 // Progress Bar
 
-function makedynamic(button, requireedScore) {
+const makedynamic=(button, requireedScore)=>{
     let info = document.getElementById("info");
     let progress = document.getElementById("progress");
     let stepsize = 100 / requireedScore;
@@ -130,7 +129,7 @@ function makedynamic(button, requireedScore) {
     }
 }
 
-function resetProgress() {
+const resetProgress=()=>{
     let progress = document.getElementById("progress");
     let info = document.getElementById("info");
     progress.style.width = "0";
@@ -138,7 +137,7 @@ function resetProgress() {
 }
 
 // if user clicks on "no", show the visit panel 
-function showVisitPanel(elementID) {
+const showVisitPanel=(elementID)=>{
     document.getElementById(elementID).addEventListener("click", function () {
         document.getElementsByClassName("visit-panel")[0].style.display = "block";
         document.getElementsByClassName("level-container")[0].style.display = "none";
@@ -148,14 +147,14 @@ function showVisitPanel(elementID) {
 }
 
 // refresh the page
-function refreshPage(reloadButton){
+const refreshPage=(reloadButton)=>{
     document.getElementById(reloadButton).addEventListener("click", function(){
         window.location.reload(true); 
     })
 };
 
 // end game function
-function endGame(buttonLevel, scoreLevel1, requireedScore, currentLevel){
+const endGame=(buttonLevel, scoreLevel1, requireedScore, currentLevel)=>{
     score++;
     const para = document.getElementById(scoreLevel1);
     para.textContent = score;
