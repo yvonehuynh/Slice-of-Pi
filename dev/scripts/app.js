@@ -29,7 +29,7 @@ function initGame(){
 initGame();
 
 let score = 0;
-let time = 35;
+let time = 35111111;
 
 
 // 1. on click of h3 CLick Me button

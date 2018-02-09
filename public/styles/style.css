@@ -160,7 +160,7 @@ button {
 
 .level-container {
   border: 3px solid black;
-  width: 40%;
+  width: 70%;
   padding: 10px;
   height: 400px;
   margin: 0 auto;
@@ -223,7 +223,9 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px; }
+  padding: 10px;
+  width: 70%;
+  margin: 0 auto; }
   .level-description .level-image {
     width: 15%; }
 
@@ -364,3 +366,34 @@ img {
 
 #level-one {
   display: none; }
+
+@media only screen and (max-width: 815px) {
+  h3 {
+    font-size: 2rem; }
+  p {
+    font-size: 1.6rem; } }
+
+@media only screen and (max-width: 550px) {
+  h1 {
+    font-size: 3rem; }
+  h2 {
+    font-size: 2rem; }
+  h3 {
+    font-size: 1.8rem; }
+  .level-container {
+    height: 339px; } }
+
+@media only screen and (max-width: 420px) {
+  h1 {
+    font-size: 2.6rem; }
+  h2 {
+    font-size: 2rem; }
+  h3 {
+    font-size: 1.4rem; }
+  p {
+    font-size: 1.2rem; }
+  header .pie-image {
+    width: 15%;
+    margin: 20px; }
+  .level-description {
+    width: 100%; } }
