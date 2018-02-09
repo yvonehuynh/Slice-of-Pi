@@ -7,19 +7,17 @@ function initGame(){
         document.getElementById("level-one").style.display= "block";
         timer();
         // Level One
-        userClick("level-one-button", "score-level1", 1, "level-one", "level-two");
+        userClick("level-one-button", "score-level1", 5, "level-one", "level-two");
         // Level Two
-        userClick("level-two-button", "score-level2", 1, "level-two", "level-three");
+        userClick("level-two-button", "score-level2", 20, "level-two", "level-three");
         // Level Three
-        userClick("level-three-button", "score-level3", 1, "level-three", "level-four");
+        userClick("level-three-button", "score-level3", 50, "level-three", "level-four");
         // Level Four
-        userClick("level-four-button", "score-level4", 1, "level-four", "level-five");
+        userClick("level-four-button", "score-level4", 70, "level-four", "level-five");
         // Level Five
-        userClick("level-five-button", "score-level5", 1, "level-five", "level-six");
+        userClick("level-five-button", "score-level5", 100, "level-five", "level-six");
         // Level Six
-       // endGame("level-six-button", "score-level6", 10, "level-six");
-
-        userClick("level-six-button", "score-level6", 7, "level-six");
+        userClick("level-six-button", "score-level6", 201, "level-six");
 
         showVisitPanel("load-visit-panel");
         showVisitPanel("reject");
@@ -57,8 +55,8 @@ const addScore = (buttonLevel, scoreLevel1, requireedScore, hideElement, current
     const para = document.getElementById(scoreLevel1);
     para.textContent = score;
     makedynamic(buttonLevel, requireedScore);
-        if (score > 6){
-            const myel = document.getElementsByClassName("win-game-panel")[0];
+        if (score > 200){
+            const myel = document.getElementsByClassName("winning-game-panel")[0];
             myel.style.display = "block";
             const scoreBoard1 = document.getElementsByClassName("score")[0];
             scoreBoard1.textContent = score;
@@ -69,7 +67,7 @@ const addScore = (buttonLevel, scoreLevel1, requireedScore, hideElement, current
             document.querySelector(".timer").style.display = "none";
         }
         if (score === requireedScore) {
-            const el = document.getElementsByClassName("winning-panel-container")[0];
+            const el = document.getElementsByClassName("next-level-panel")[0];
             el.style.display = "block";
             const scoreBoard = document.getElementsByClassName("score")[0];
             scoreBoard.textContent = score;
@@ -89,7 +87,7 @@ function nextLevel(currentLevel, nextGameLevel) {
     document.getElementById("accept-one").addEventListener("click", function () {
         resetProgress();
         score = 0;
-        const winningPanel = document.getElementsByClassName("winning-panel-container")[0];
+        const winningPanel = document.getElementsByClassName("next-level-panel")[0];
         const previousGame = document.getElementById(currentLevel);
         const nextGame = document.getElementById(nextGameLevel);
         winningPanel.style.display = "none";
@@ -108,7 +106,7 @@ function timer() {
                 document.getElementsByClassName("losing-panel-container")[0].classList.remove("hide");
             })
         }
-        document.querySelector(".timer").textContent = time;
+        document.querySelector(".timer").textContent = `Timer: ${time}`;
     }, 1000);
 }
 
@@ -123,7 +121,7 @@ function makedynamic(button, requireedScore) {
     if (width >= 100) {
         progress.style.width = "100%";
         info.innerHTML = stepsize > 10 ? "You made it!" : "ouch, my fingerrrrs";
-        const el = document.getElementsByClassName("winning-panel-container")[0];
+        const el = document.getElementsByClassName("next-level-panel")[0];
         el.style.display = "block";
     } else {
         width = width + "%";
@@ -167,7 +165,7 @@ function endGame(buttonLevel, scoreLevel1, requireedScore, currentLevel){
         scoreBoard.textContent = score;
         score === 0;
         document.getElementById(currentLevel).style.display = "none";
-        const winningPanel = document.getElementsByClassName("winning-panel-container")[0];
+        const winningPanel = document.getElementsByClassName("next-level-panel")[0];
         winningPanel.style.display = "none";
     }
 }

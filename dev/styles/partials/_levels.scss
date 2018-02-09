@@ -2,7 +2,7 @@
     border: 3px solid black;
     width: 40%;
     padding: 10px;
-    height: 300px;
+    height: 400px;
     margin: 0 auto;
     background: $secondaryColour;
 }
@@ -11,4 +11,8 @@ span {
     display: inline-block;
     background: rgba(255, 255, 255, 0.5);
     width: 40px;
+}
+
+.timer-container {
+    height: 40px;
 }

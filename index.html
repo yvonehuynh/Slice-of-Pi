@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Click Wars!</title>
+    <title>Slice of Pie!</title>
 
     <link rel="stylesheet" href="./public/styles/style.css">
 </head>
@@ -14,46 +14,43 @@
             <div class="pie-image">
                 <img src="./public/assets/pie-reverse.png" alt="">
             </div>
-            <h1>SLICE OF PI</h1>
+            <h1>SLICE OF PIE</h1>
             <div class="pie-image">
                 <img src="./public/assets/pie.png" alt="">
             </div>
         </header>
+
+        <div class="timer-container">
+            <p class="timer"></p>
+        </div>
+
         <!-- Game Start Panel -->
         <div id="game-start-panel">
             <div class="game-description">
                 <h3>The Game</h3>
-                <p>The world really likes pies and according to unscientific research, it brings world peace. Can you bring world peace by baking as may pies as you can?</p>
+                <p>The world really likes pies and according to unscientific research, it brings world peace. Can you bring world peace by baking as many pies as you can?</p>
                 <h3>Instructions</h3>
-                <p>Try to reach each level's goal by clicking on the button as much as you can! You got 15 seconds in total for all levels so hurry to make the world happy!</p>
+                <p>Try to reach each level's goal by clicking on the button as much as you can! You got 35 seconds in total for all 6 levels so hurry to make the world happy!</p>
             </div>
             <button id="start-game-button">START GAME</button>
         </div>
-        <p class="timer"></p>
 
         <!-- losing panel -->
         <div class="losing-panel-container hide">
-            <h2>You Lose! Try again?</h2>
-            <p class="score"></p>
+            <h2>You lose! Try again?</h2>
             <button id="reload-game">Yes</button>
             <button id="load-visit-panel">No</button>
         </div>
 
-            <!-- You won the game panel -->
-            <div class="win-game-panel hide">
-                <h2>YOU WON THE GAME!</h2>
-                <div class="pie-image">
-                    <img src="./public/assets/pie-man.png" alt="">
-                </div>
-                <p>The world is saved thanks to you!</p>
-                <button id="play-again">Play Again</button>
+        <!-- You won the game panel -->
+        <div class="winning-game-panel hide">
+            <h2>You won the game!</h2>
+            <div class="pie-image">
+                <img src="./public/assets/pie-man.png" alt="">
             </div>
-
-        <!-- Progress Bar -->
-        <!-- <div class="progress">
-            <div id="info">Progress: 0%</div>
-            <div id="progress" style="width:0%;"></div>
-        </div> -->
+            <p>The world is saved thanks to you!</p>
+            <button id="play-again">Save The World Again</button>
+        </div>
 
         <div class="level-container hide">
             <div id="info">Progress: 0%</div>
@@ -61,127 +58,128 @@
                 <div id="progress" style="width:0%;"></div>
             </div>
         
-        <!-- Level One -->
-        <div class="" id="level-one">
-            <h2>LEVEL ONE</h2>
-            <div class="level-description">
-                <div class="level-image">
-                    <img src="./public/assets/blueberry-reverse.png" alt="">
+            <!-- Level One -->
+            <div class="" id="level-one">
+                <h2>Level 1</h2>
+                <div class="level-description">
+                    <div class="level-image">
+                        <img src="./public/assets/blueberry-reverse.png" alt="">
+                    </div>
+                    <P>Make 5 blueberry pies!</P>
+                    <div class="level-image">
+                        <img src="./public/assets/blueberry.png" alt="">
+                    </div>
                 </div>
-                <P>Make 5 blueberry pies!</P>
-                <div class="level-image">
-                    <img src="./public/assets/blueberry.png" alt="">
+                <button class="click-button" id="level-one-button">Click me!</button>
+                <p class="score">Pies: <span id="score-level1">0</span></p>
+            </div> 
+
+            <!-- Level Two -->
+            <div class=" hide" id="level-two">
+                <h2>Level 2</h2>
+                <div class="level-description">
+                    <div class="level-image">
+                        <img src="./public/assets/apple-reverse.png" alt="">
+                    </div>
+                    <P>Make 20 apple pies!</P>
+                    <div class="level-image">
+                        <img src="./public/assets/apple.png" alt="">
+                    </div>
                 </div>
+                <button class="click-button" id="level-two-button">Click me!</button>
+                <p class="score">Pies:<span id="score-level2">0</span></p>
             </div>
-            <button class="click-button" id="level-one-button">Click me!</button>
-            <p class="score">Score: <span id="score-level1">0</span></p>
+
+            <!-- Level Three -->
+            <div class=" hide" id="level-three">
+                <h2>Level 3</h2>
+                <div class="level-description">
+                    <div class="level-image">
+                        <img src="./public/assets/strawberry-reverse.png" alt="">
+                    </div>
+                    <P>Make 50 strawberry pies!</P>
+                    <div class="level-image">
+                        <img src="./public/assets/strawberry.png" alt="">
+                    </div>
+                </div>
+                <button class="click-button" id="level-three-button">Click me!</button>
+                <p class="score">Pies:<span id="score-level3">0</span></p>
+            </div>
+
+            <!-- Level Four --> 
+            <div class=" hide" id="level-four">
+                <h2>Level 4</h2>
+                <div class="level-description">
+                    <div class="level-image">
+                        <img src="./public/assets/pumpkin.png" alt="">
+                    </div>
+                    <P>Make 70 pumpkin pies!</P>
+                    <div class="level-image">
+                        <img src="./public/assets/pumpkin.png" alt="">
+                    </div>
+                </div>
+                <button class="click-button" id="level-four-button">Click me!</button>
+                <p class="score">Pies:<span id="score-level4">0</span></p>
+            </div>
+
+            <!-- Level Five -->
+            <div class=" hide" id="level-five">
+                <h2>Level 5</h2>
+                <div class="level-description">
+                    <div class="level-image">
+                        <img src="./public/assets/icecream-reverse.png" alt="">
+                    </div>
+                    <P>Make 100 ice cream pies!</P>
+                    <div class="level-image">
+                        <img src="./public/assets/icecream.png" alt="">
+                    </div>
+                </div>
+                <button class="click-button" id="level-five-button">Click me!</button>
+                <p class="score">Pies:
+                    <span id="score-level5">0</span>
+                </p>
+            </div>
+
+            <!-- Level Six -->
+            <div class="hide" id="level-six">
+                <h2>Level 6</h2>
+                <div class="level-description">
+                    <div class="level-image">
+                        <img src="./public/assets/broccoli-reverse.png" alt="">
+                    </div>
+                    <P>Make 200 broccoli pies!</P>
+                    <div class="level-image">
+                        <img src="./public/assets/broccoli.png" alt="">
+                    </div>
+                </div>
+                <button class="click-button" id="level-six-button">Click me!</button>
+                <p class="score">Pies:
+                    <span id="score-level6">0</span>
+                </p>
+            </div>
+            
+            <!-- next level panel -->
+            <div class="next-level-panel hide">
+                <h2>You Win! Move onto the next round?</h2>
+                <p class="score"></p>
+                <button class="accept" id="accept-one">Yes</button>
+                <button id="reject">No</button>
+            </div>
+        </div>
+
+        <!-- How can you say no to pie?! -->
+        <div class="visit-panel hide">
+            <h3>"No"?</h3>
+            <p>We won't take no for an answer. The world needs pies. But maybe you can use this app to convince us otherwise:</p>
+            <div class="say-no-panel">
+                <a href="http://yvonecodesit.ca/say-no/">
+                    <img src="./public/assets/say-no.png" alt="">
+                </a>
+            </div>
+            <p>OR</p>
+            <button id="reload-game2">Play Again</button>
         </div> 
-
-        <!-- Level Two -->
-        <div class=" hide" id="level-two">
-            <h2>Level Two</h2>
-            <div class="level-description">
-                <div class="level-image">
-                    <img src="./public/assets/apple-reverse.png" alt="">
-                </div>
-                <P>Make 20 apple pies!</P>
-                <div class="level-image">
-                    <img src="./public/assets/apple.png" alt="">
-                </div>
-            </div>
-            <button class="click-button" id="level-two-button">Click me!</button>
-            <p class="score">Score:<span id="score-level2">0</span></p>
-        </div>
-
-        <!-- Level Three -->
-        <div class=" hide" id="level-three">
-            <h2>Level 3</h2>
-            <div class="level-description">
-                <div class="level-image">
-                    <img src="./public/assets/strawberry-reverse.png" alt="">
-                </div>
-                <P>Make 50 strawberry pies!</P>
-                <div class="level-image">
-                    <img src="./public/assets/strawberry.png" alt="">
-                </div>
-            </div>
-            <button class="click-button" id="level-three-button">Click me!</button>
-            <p class="score">Score:<span id="score-level3">0</span></p>
-        </div>
-
-        <!-- Level Four --> 
-        <div class=" hide" id="level-four">
-            <h2>Level 4</h2>
-            <div class="level-description">
-                <div class="level-image">
-                    <img src="./public/assets/pumpkin.png" alt="">
-                </div>
-                <P>Make 70 pumpkin pies!</P>
-                <div class="level-image">
-                    <img src="./public/assets/pumpkin.png" alt="">
-                </div>
-            </div>
-            <button class="click-button" id="level-four-button">Click me!</button>
-            <p class="score">Score:<span id="score-level4">0</span></p>
-        </div>
-
-        <!-- Level Five -->
-        <div class=" hide" id="level-five">
-            <h2>Level 5</h2>
-            <div class="level-description">
-                <div class="level-image">
-                    <img src="./public/assets/icecream-reverse.png" alt="">
-                </div>
-                <P>Make 100 ice cream pies!</P>
-                <div class="level-image">
-                    <img src="./public/assets/icecream.png" alt="">
-                </div>
-            </div>
-            <button class="click-button" id="level-five-button">Click me!</button>
-            <p class="score">Score:
-                <span id="score-level5">0</span>
-            </p>
-        </div>
-
-        <!-- Level Six -->
-        <div class=" hide" id="level-six">
-            <h2>Level 6</h2>
-            <div class="level-description">
-                <div class="level-image">
-                    <img src="./public/assets/broccoli-reverse.png" alt="">
-                </div>
-                <P>Make 200 broccoli pies!</P>
-                <div class="level-image">
-                    <img src="./public/assets/broccoli.png" alt="">
-                </div>
-            </div>
-            <button class="click-button" id="level-six-button">Click me!</button>
-            <p class="score">Score:
-                <span id="score-level6">0</span>
-            </p>
-        </div>
-        
-        <!-- winning panel -->
-        <div class="winning-panel-container hide">
-            <h2>You Win! Move onto the next round?</h2>
-            <p class="score"></p>
-            <button class="accept" id="accept-one">Yes</button>
-            <button id="reject">No</button>
-        </div>
     </div>
-
-    <!-- How can you say no to pie?! -->
-    <div class="visit-panel hide">
-        <h3>"No"?</h3>
-        <p>We won't take no for an answer. The world needs pies. But maybe you can use this app to convince us otherwise:</p>
-        <div class="say-no-panel">
-            <a href="http://yvonecodesit.ca/say-no/">
-                <img src="./public/assets/say-no.png" alt="">
-            </a>
-        </div>
-        <button id="reload-game2">Play Again</button>
-    </div> 
-        </div>
     
 
     <script src="./public/scripts/app.js"></script>

@@ -1,0 +1,29 @@
+.losing-panel-container {
+    border: 3px solid black;
+    background: $tertiaryColour;
+    width: 40%;
+    padding: 10px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.visit-panel {
+    width: 60%;
+    border: 3px solid black;
+    background: $secondaryColour;
+    margin: 0 auto;
+    padding: 10px;
+    .say-no-panel {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+.winning-game-panel {
+    border: 3px solid black;
+    background: $tertiaryColour;
+    width: 40%;
+    padding: 10px;
+    height: 500px;
+    margin: 0 auto;
+}

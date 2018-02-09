@@ -10,10 +10,10 @@ header {
 
 .level-description {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     padding: 10px;
     .level-image {
-        width: 10%;
+        width: 15%;
     }
 }

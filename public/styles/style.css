@@ -139,7 +139,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   text-align: center;
   border: 3px solid black;
   padding: 10px;
-  width: 60%;
+  width: 70%;
   height: 400px;
   margin: 0 auto;
   background: repeating-linear-gradient(to right, #579bf5, #579bf5 40px, #fff386 40px, #fff386 80px); }
@@ -149,13 +149,20 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 button {
   background: #ff8575;
-  border: 3px solid black; }
+  border: 3px solid black;
+  font-size: 2rem;
+  text-transform: uppercase; }
+  button:hover, button:active {
+    background: white; }
+
+#play-again {
+  background: white; }
 
 .level-container {
   border: 3px solid black;
   width: 40%;
   padding: 10px;
-  height: 300px;
+  height: 400px;
   margin: 0 auto;
   background: #579bf5; }
 
@@ -163,6 +170,9 @@ span {
   display: inline-block;
   background: rgba(255, 255, 255, 0.5);
   width: 40px; }
+
+.timer-container {
+  height: 40px; }
 
 .progress {
   width: 50%;
@@ -191,8 +201,14 @@ span {
   .visit-panel .say-no-panel {
     width: 70%;
     margin: 0 auto; }
-    .visit-panel .say-no-panel:hover {
-      border: 3px solid black; }
+
+.winning-game-panel {
+  border: 3px solid black;
+  background: #ff8575;
+  width: 40%;
+  padding: 10px;
+  height: 500px;
+  margin: 0 auto; }
 
 header {
   display: flex;
@@ -204,11 +220,11 @@ header {
 
 .level-description {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   padding: 10px; }
   .level-description .level-image {
-    width: 10%; }
+    width: 15%; }
 
 html {
   font-size: 62.5%; }
@@ -220,11 +236,15 @@ body {
 h1 {
   font-size: 4rem; }
 
+h2 {
+  font-size: 2.7rem; }
+
 h3 {
   font-size: 2.5rem; }
 
 p {
-  font-size: 2rem; }
+  font-size: 2rem;
+  font-weight: bold; }
 
 .wrapper {
   width: 100%;
