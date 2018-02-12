@@ -13,7 +13,7 @@ function initGame() {
         // Level Three
         userClick("level-three-button", "score-level3", 50, "level-three", "level-four");
         // Level Four
-        userClick("level-four-button", "score-level4", 70, "level-four", "level-five");
+        userClick("level-four-button", "score-level4", 100, "level-four", "level-five");
         // Level Five
         userClick("level-five-button", "score-level5", 100, "level-five", "level-six");
         // Level Six
@@ -29,7 +29,7 @@ function initGame() {
 initGame();
 
 let score = 0;
-let time = 20;
+let time = 35;
 
 
 // 1. on click of h3 CLick Me button
